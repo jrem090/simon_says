@@ -1,9 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
+#include <iostream>
 #include <stdlib.h>     /* srand, rand */
 #include <stdio.h>
-#include <iostream>
-#include <windows.h>
+
+#include <QTimer>
 #include <QDateTime>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -27,11 +29,13 @@ MainWindow::MainWindow(QWidget *parent) :
     game_started = false;
 }
 
+//=============================================================================
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+//=============================================================================
 void MainWindow::GreenPress()
 {
     if(!in_playback)
@@ -40,6 +44,8 @@ void MainWindow::GreenPress()
         HandlePress(1);
     }
 }
+
+//=============================================================================
 void MainWindow::RedPress()
 {
     if(!in_playback)
@@ -48,6 +54,8 @@ void MainWindow::RedPress()
         HandlePress(0);
     }
 }
+
+//=============================================================================
 void MainWindow::YellowPress()
 {
     if(!in_playback)
@@ -56,6 +64,8 @@ void MainWindow::YellowPress()
         HandlePress(3);
     }
 }
+
+//=============================================================================
 void MainWindow::BluePress()
 {
     if(!in_playback)
@@ -65,6 +75,7 @@ void MainWindow::BluePress()
     }
 }
 
+//=============================================================================
 void MainWindow::HandlePress(int button_pressed)
 {
     if(game_started)
@@ -109,6 +120,7 @@ void MainWindow::HandlePress(int button_pressed)
     }
 }
 
+//=============================================================================
 void MainWindow::ShowCurrentSequence()
 {
 
@@ -122,6 +134,7 @@ void MainWindow::ShowCurrentSequence()
 
 }
 
+//=============================================================================
 void MainWindow::setAllUp()
 {
     ui->RedButton->setDown(false);
@@ -130,6 +143,7 @@ void MainWindow::setAllUp()
     ui->YellowButton->setDown(false);
 }
 
+//=============================================================================
 void MainWindow::slotUp()
 {
     setAllUp();
@@ -144,6 +158,7 @@ void MainWindow::slotUp()
     }
 }
 
+//=============================================================================
 void MainWindow::showNext()
 {
     if(index<sequence.size())

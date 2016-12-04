@@ -2,13 +2,15 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QTimer>
-#include <QThread>
 
 namespace Ui {
 class MainWindow;
 }
 
+/**
+ * @brief The MainWindow class
+ * This class is responsible for the logic behind the the simon says game.
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -18,18 +20,35 @@ public:
     ~MainWindow();
 
 private:
+    //METHODS
+
+    /**
+     * Method for responding to a button press
+     * @param button_pressed Index of the button pressed
+     */
+    void HandlePress(int button_pressed);
+
+    /**
+     * Add next item in sequence and playback
+     */
+    void ShowCurrentSequence();
+
+    /**
+     * set all buttons in an up position
+     */
+    void setAllUp();
+
+    //DATA
+
     Ui::MainWindow *ui;
+
     bool game_started;
     bool in_playback;
-    int  hi_score;
-    int  current_score;
-    int  index;
-    QTimer timer;
-    std::vector<int> sequence;
 
-    void HandlePress(int button_pressed);
-    void ShowCurrentSequence();
-    void setAllUp();
+    unsigned int hi_score;
+    unsigned int index;
+
+    std::vector<int> sequence;
 
 
 public slots:
