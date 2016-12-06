@@ -1,6 +1,6 @@
 {
   "name": "John Says",
   "tagline": "Why do what SImon says when you can listen to me instead?",
-  "body": "## The Application\r\nThis repository builds an application which is a derivation of the <a href=\"https://en.wikipedia.org/wiki/Simon_(game)\">simon</a>. The application is written in c++ using qt 5.5 libraries to ensure cross-platform compatibility\r\n\r\n![](https://github.com/jrem090/simon_says/blob/master/Capture.PNG?raw=true)\r\n\r\n## Compiling\r\nThe easiest way to compile the application is to use the QtCreator ide and open the Qt project file. You should then be able to compile and run the code.",
+  "body": "## The Application\r\nThis repository builds an application which is a derivation of the <a href=\"https://en.wikipedia.org/wiki/Simon_(game)\">simon</a>. The application is written in c++ using qt 5.5 libraries to ensure cross-platform compatibility\r\n\r\n![](https://github.com/jrem090/simon_says/blob/master/Capture.PNG?raw=true)\r\n\r\n## Compiling\r\nThe easiest way to compile the application is to use the QtCreator ide and open the Qt project file. You should then be able to compile and run the code inside Qt Creator using a valid c++ compiler",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
