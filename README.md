@@ -9,11 +9,13 @@ The code is written in c++ using Qt Libraries
 This was developed using MinGW compiler in QtCreator. I would reccommend
 using the QtCreator IDE and using the opening the sudoku solver project
 file. Then using the the native build command in Qt Creator for a
-dynamic build.
+dynamic build. You should be able to call run from Qt Creator.
 
 To build a static version add the "-config static" flag to the arguments 
 in qmake. Also make a custom process that calls windeployqt.exe and
-specifies the build directory as an arguement.
+specifies the build directory as an arguement. You could also build the program
+dynamically and add the relevant dlls included in the windows_dll directory in 
+this repo(though this is not the most advisible option)
 ##MAC
 *Not attempted yet*
 ##Linux
