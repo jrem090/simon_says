@@ -44,6 +44,7 @@ private:
 
     bool game_started;
     bool in_playback;
+    bool is_easy_mode;
 
     unsigned int hi_score;
     unsigned int index;
@@ -56,6 +57,7 @@ public slots:
     void RedPress();
     void YellowPress();
     void BluePress();
+    void SwitchModes();
     void showNext();
     void slotUp();
 };

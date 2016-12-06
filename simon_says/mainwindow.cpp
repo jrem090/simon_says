@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     in_playback(false),
+    is_easy_mode(true),
     hi_score(0),
     index(0)
 {
@@ -25,6 +26,8 @@ MainWindow::MainWindow(QWidget *parent) :
             this, SLOT(BluePress()));
     connect(ui->YellowButton, SIGNAL(clicked(bool)),
             this, SLOT(YellowPress()));
+    connect(ui->mode_button, SIGNAL(pressed()),
+            this, SLOT(SwitchModes()));
 
     game_started = false;
 }
@@ -123,14 +126,22 @@ void MainWindow::HandlePress(int button_pressed)
 //=============================================================================
 void MainWindow::ShowCurrentSequence()
 {
-
     in_playback = true;
-    //assign next button in sequence
+    // if expert mode create new sequence
+    if(!is_easy_mode)
+    {
+        for(int i = 0; i < sequence.size(); ++i)
+        {
+            sequence.at(i) = rand() % 4;
+        }
+    }
+
+    //assign last button in sequence
     int i = rand() % 4;
     sequence.push_back(i);
 
     //start playback of colors in sequence
-    showNext();
+    QTimer::singleShot(400, this, SLOT(showNext()));
 
 }
 
@@ -193,4 +204,29 @@ void MainWindow::showNext()
     {
         std::cout << "ERROR HERE" << std::endl;
     }
+}
+
+//=============================================================================
+void MainWindow::SwitchModes()
+{
+    // switch button text
+    if(is_easy_mode)
+    {
+        ui->mode_button->setText("Easy Mode");
+        ui->centralWidget->setStyleSheet("background-color:black;color:red");
+    }
+    else
+    {
+        ui->mode_button->setText("Expert Mode");
+        ui->centralWidget->setStyleSheet("background-color:white;color:black");
+
+    }
+
+    // switch mode and restart game
+    is_easy_mode = !is_easy_mode;
+    sequence.clear();
+    index = 0;
+    ui->score_label->setText(QString::number(index));
+    game_started = false;
+    ui->output_label->setText("Mode Changed. Game restarted.");
 }

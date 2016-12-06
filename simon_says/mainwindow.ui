@@ -7,13 +7,25 @@
     <x>0</x>
     <y>0</y>
     <width>462</width>
-    <height>576</height>
+    <height>600</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>JOHN SAYS</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <widget class="QPushButton" name="RedButton">
     <property name="geometry">
      <rect>
@@ -26,9 +38,13 @@
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color: rgb(100, 0, 0);
+border-width: 5px;
+border-radius: 10px;
 }
 QPushButton:pressed{
 background-color: rgb(255, 0, 0);
+border-width: 5px;
+border-radius: 10px;
 }</string>
     </property>
     <property name="text">
@@ -47,9 +63,13 @@ background-color: rgb(255, 0, 0);
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color: rgb(0, 0, 100);
+border-width: 5px;
+border-radius: 10px;
 }
 QPushButton:pressed{
 background-color: rgb(0, 0, 255);
+border-width: 5px;
+border-radius: 10px;
 }</string>
     </property>
     <property name="text">
@@ -67,10 +87,14 @@ background-color: rgb(0, 0, 255);
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
-background-color: rgb(60, 60, 20);
+background-color: rgb(60, 60, 10);
+border-width: 5px;
+border-radius: 10px;
 }
 QPushButton:pressed{
-background-color: rgb(120, 120, 40);
+background-color: rgb(180, 180, 20);
+border-width: 5px;
+border-radius: 10px;
 }</string>
     </property>
     <property name="text">
@@ -89,9 +113,13 @@ background-color: rgb(120, 120, 40);
     <property name="styleSheet">
      <string notr="true">QPushButton{
 background-color: rgb(0, 100, 0);
+border-width: 5px;
+border-radius: 10px;
 }
 QPushButton:pressed{
 background-color: rgb(0,255, 0);
+border-width: 5px;
+border-radius: 10px;
 }</string>
     </property>
     <property name="text">
@@ -128,7 +156,7 @@ background-color: rgb(0,255, 0);
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>40</y>
+      <y>30</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -144,7 +172,7 @@ background-color: rgb(0,255, 0);
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>40</y>
+      <y>30</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -172,6 +200,22 @@ background-color: rgb(0,255, 0);
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="mode_button">
+    <property name="geometry">
+     <rect>
+      <x>14</x>
+      <y>520</y>
+      <width>431</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(220, 220, 220);</string>
+    </property>
+    <property name="text">
+     <string>Expert Mode</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -182,8 +226,20 @@ background-color: rgb(0,255, 0);
      <height>21</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
@@ -191,7 +247,14 @@ background-color: rgb(0,255, 0);
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
