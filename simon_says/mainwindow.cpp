@@ -16,8 +16,13 @@ MainWindow::MainWindow(QWidget *parent) :
     hi_score(0),
     index(0)
 {
+    //set random seed using current time
     srand(QDateTime::currentMSecsSinceEpoch());
+
+    //setup UI
     ui->setupUi(this);
+
+    //connect signals and slots
     connect(ui->RedButton, SIGNAL(clicked(bool)),
             this, SLOT(RedPress()));
     connect(ui->GreenButton, SIGNAL(clicked(bool)),
@@ -83,7 +88,8 @@ void MainWindow::HandlePress(int button_pressed)
 {
     if(game_started)
     {
-        //check if next in sequence
+        //check if press matches next in sequence
+        // if correct continue
         if(button_pressed == sequence.at(index))
         {
             ++index;
@@ -104,18 +110,15 @@ void MainWindow::HandlePress(int button_pressed)
         }
         else
         {
+            //wrong button reset game
             ui->output_label->setText("YOU LOST");
             sequence.clear();
             index = 0;
             ui->score_label->setText(QString::number(index));
             game_started = false;
         }
-        //if correct
-        //if last in sequence
-        //ShowCurrentSequence();
-        //else wait for next
-
     }
+    //show first button to press
     else
     {
         game_started = true;
