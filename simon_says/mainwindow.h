@@ -40,25 +40,63 @@ private:
 
     //DATA
 
+    ///user interface for the mainwindow class. uses  corresponding the ui file
     Ui::MainWindow *ui;
 
+    /// true if in a game session
     bool game_started;
+
+    /// true if currently playing back sequence
     bool in_playback;
+
+    /// true if in easy mode, false if in expert mode
     bool is_easy_mode;
 
+    /// current high schore
     unsigned int hi_score;
+
+    ///index of current press
     unsigned int index;
 
+    ///stored sequence of button presses
     std::vector<int> sequence;
 
 
 public slots:
+    
+    /**
+     * Handle a green button press
+     */
     void GreenPress();
+
+    /**
+     * Handle a red button press
+     */
     void RedPress();
+
+    /**
+     * Handle a yellow button press
+     */
     void YellowPress();
+
+    /**
+     * Handle a blue button press
+     */
     void BluePress();
+
+    /**
+     * Switch mode from easy to expert and vice versa
+     */
     void SwitchModes();
+
+    /**
+     * Show next button in sequence
+     */
     void showNext();
+
+    /**
+     * Set all buttons up.
+     */
     void slotUp();
 };
 
